@@ -1,0 +1,29 @@
+name = input('Enter your name: ')
+
+weight = input('Enter your weight in kgs here: ')
+
+mass = int(weight)
+
+w = 2.20462*mass
+
+height = input('Enter your height in inches here: ')
+
+h = int(height)
+
+BMI = (703 *  w )/ (h**2)
+
+print(BMI)
+
+if BMI > 0:
+    if (BMI < 18.5):
+        print (name + ',' + " you are under weight category")
+    elif (BMI <24.9):
+        print (name + ',' + " you are normal weight category")
+    elif (BMI< 29.9):
+        print(name + ',' + " you are overweight category")
+    elif (BMI< 34.9):
+        print(name + ',' + " you are obese category")
+    elif (BMI< 39.9):
+        print(name + ',' + " you are severely obese category")
+else:
+    print(name + ',' + " you are morbidly obese category")  
