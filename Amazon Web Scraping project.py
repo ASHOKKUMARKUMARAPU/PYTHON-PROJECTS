@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+
 
 
 # import libraries
@@ -15,7 +15,6 @@ import datetime
 import smtplib          #for sending emails
 
 
-# In[2]:
 
 
 # connect to website 
@@ -39,7 +38,6 @@ title = soup2.find(id = 'productTitle').get_text()
 ratings = soup2.find(id = 'acrCustomerReviewText').get_text()
 
 
-# In[3]:
 
 
 # Getting data with Clean up the data a little bit
@@ -57,17 +55,12 @@ ratings = (ratings.strip())
 print(ratings)
 
 
-# In[4]:
-
-
 import datetime
 
 today = datetime.date.today()
 
 #print(today)
 
-
-# In[5]:
 
 
 #create csv dataset to import data into it
@@ -84,9 +77,6 @@ with open('AmazonWebScraperDataset.csv', 'w', newline='', encoding='UTF8') as f:
     writer.writerow(data)
 
 
-# In[6]:
-
-
 # To read the csv
 
 import pandas as pd
@@ -96,8 +86,6 @@ df = pd.read_csv(r'C:\Users\K ASHOK KUMAR\Downloads\AmazonWebScraperDataset.csv'
 print(df)
 
 
-# In[7]:
-
 
 # we are appending to this csv
 
@@ -105,8 +93,6 @@ with open('AmazonWebSraperDataset.csv','a+',newline='',encoding ='UTF8') as f:
     writer = csv.writer(f)
     writer.writerow(data)
 
-
-# In[8]:
 
 
 # To add multiple rows of data under check constraint
@@ -146,17 +132,12 @@ def check_ratings():
         writer.writerow(data)
 
 
-# In[ ]:
-
-
 # Runs check_ratings after a set time and inputs data into csv
 
 while(True):
     check_ratings()
     time.sleep(86400)
 
-
-# In[ ]:
 
 
 import pandas as pd
@@ -166,7 +147,6 @@ df = pd.read_csv(r'C:\Users\K ASHOK KUMAR\Downloads\AmazonWebScraperDataset.csv'
 print(df)
 
 
-# In[ ]:
 
 
 # If you want to receive a mail regarding the price drop
@@ -184,8 +164,6 @@ def send_mail():
     
     server.sendmail('ashokkumarkumarapu@gmail.com',msg)
 
-
-# In[ ]:
 
 
 
